@@ -1,0 +1,110 @@
+####
+# ATENTION:
+# Replace all occurences of laravel with your project's name
+####
+
+# v2 sintax
+version: '2'
+
+# Named volumes
+volumes:
+
+  # MySQL Data
+  financeiro-mysql-data:
+    driver: local
+
+  # Redis Data
+  financeiro-redis-data:
+    driver: local
+
+services:
+  # MySQL (5.7)
+  mysql:
+    image: ambientum/mysql:5.7
+    container_name: code-financeiro-mysql
+    volumes:
+      - financeiro-mysql-data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=secret
+      - MYSQL_DATABASE=code_laravel_vue
+      - MYSQL_USER=homestead
+      - MYSQL_PASSWORD=secret    
+    tty: true
+
+  # Redis
+  cache:
+    image: ambientum/redis:3.2
+    container_name: code-financeiro-redis
+    command: --appendonly yes
+    volumes:
+      - financeiro-redis-data:/data
+    ports:
+      - "6379:6379"
+
+  # PHP (with Caddy)
+  app:
+    image: ambientum/php:7.0-caddy
+    container_name: code-financeiro-app
+    volumes:
+      - .:/var/www/app
+    ports:
+      - "80:8080"
+    links:
+      - mysql
+      - cache    
+    tty: true
+
+
+  # Laravel Queues
+  queue:
+    image: ambientum/php:7.0
+    container_name: code-financeiro-queue
+    command: php artisan queue:listen
+    volumes:
+      - .:/var/www/app
+    links:
+      - mysql
+      - cache
+    tty: true
+    
+  # phpMyAdmin
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: code-financeiro-phpmyadmin
+    environment:
+     - PMA_ARBITRARY=1
+     - PMA_USER=homestead
+     - PMA_PASSWORD=secret
+     - PMA_HOST=mysql
+    restart: always
+    ports:
+     - 8080:80
+    volumes:
+      - /sessions
+    links:
+      - mysql
+      - cache
+
+
+  # Web server - For live reload and development
+  # This environment can be used to run npm and node
+  # commands as well
+  # dev:
+  #   image: ambientum/node:6
+  #   container_name: laravel-vue-dev
+  #   command: npm run dev
+  #   volumes:
+  #     - .:/var/www/app
+  #   ports:
+  #     - 8080:8080
+
+  # Testing dist on a "real" webserver
+  # production-server:
+  #   image: nginx:stable-alpine
+  #   container_name: laravel-preview-server
+  #   volumes:
+  #     - ./dist:/usr/share/nginx/html
+  #   ports:
+  #     - 9090:80
