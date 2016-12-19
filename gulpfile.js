@@ -34,6 +34,7 @@ gulp.task('webpack-dev-server', ()=>{
     ];
 
     config.entry.admin = [config.entry.admin].concat(inlineHot);
+    config.entry.spa = [config.entry.spa].concat(inlineHot);
 
     new WebpackDevServer(webpack(config),{
         hot: true,
@@ -54,6 +55,7 @@ gulp.task('webpack-dev-server', ()=>{
 
 elixir(mix => {
     mix.sass('./resources/assets/admin/sass/admin.scss')
+        .sass('./resources/assets/spa/sass/spa.scss')
         .copy('./node-modules/materialize-css/fonts/roboto', 'public/fonts/roboto');
     //mix.webpack('./resources/assets/admin/js/admin.js', './public/build');
     gulp.start('webpack-dev-server');
