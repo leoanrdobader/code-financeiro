@@ -12,6 +12,7 @@
 </head>
 <body>
 <app></app>
+
 <!-- Scripts -->
 <script src="{{ asset('build/spa.bundle.js') }}"></script>
 </body>

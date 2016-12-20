@@ -24,7 +24,7 @@
                 year: new Date().getFullYear()
             }
         }
-    }
+    };
 </script>
 
 <style type="text/css">

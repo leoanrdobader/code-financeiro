@@ -14,7 +14,7 @@
 
                     <div class="row">
                         <div class="input-field col s12">
-                            <input id="password" type="password" class="validate {{ $messageError ? 'invalide' : $messageError }}" name="password" v-model="user.password" required>
+                            <input id="password" type="password" class="validate " name="password" v-model="user.password" required>
                             <label for="password" class="active">Senha</label>
                         </div>
                     </div>
@@ -44,6 +44,7 @@
         methods: {
             login(){
             }
+
         }
     }
 </script>
