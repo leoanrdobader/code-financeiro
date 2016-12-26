@@ -46,18 +46,22 @@
 
 	'use strict';
 
+	var _localStorage = __webpack_require__(27);
+
+	var _localStorage2 = _interopRequireDefault(_localStorage);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 	__webpack_require__(2);
+
 	window.Vue = __webpack_require__(6);
 	__webpack_require__(11);
+	//const url = window.location.protocol + "//" + window.location.host+  "/api";
+	var url = window.location.protocol + "//localhost/api";
+	Vue.http.options.root = url;
+	//console.log('url: -> '+ url);
+
 	__webpack_require__(12);
-
-	//
-	//Vue.component('app', require('./components/App.vue'));
-
-
-	// const app = new Vue({
-	//     el: 'body'
-	// });
 
 	// import Echo from "laravel-echo"
 
@@ -24524,7 +24528,7 @@
 
 	var _router2 = _interopRequireDefault(_router);
 
-	var _vueRouter = __webpack_require__(24);
+	var _vueRouter = __webpack_require__(25);
 
 	var _vueRouter2 = _interopRequireDefault(_vueRouter);
 
@@ -24611,7 +24615,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n#app{\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    min-height: 100vh;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n}\n\nmain {\n    -webkit-box-flex: 1;\n        -ms-flex: 1 0 auto;\n            flex: 1 0 auto;\n}\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n#app{\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    min-height: 100vh;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n}\n\nmain {\n    -webkit-box-flex: 1;\n        -ms-flex: 1 0 auto;\n            flex: 1 0 auto;\n}\n", ""]);
 
 	// exports
 
@@ -24915,7 +24919,7 @@
 /* 19 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div id=\"app\">\n    <header>\n        ********************\n    </header>\n    <main>\n        #####################\n        <router-view></router-view>\n    </main>\n    <footer class=\"page-footer\">\n        <div class=\"footer-copyright\">\n            <div class=\"container center-align\">\n                © {{ date('Y') }} - <a class=\"green-text text-lighten-4\" href=\"javascritpt.void(0);\">Leonardo</a>\n            </div>\n        </div>\n    </footer>\n</div>\n";
+	module.exports = "\n<div id=\"app\">\n    <header>\n    </header>\n    <main>\n        <router-view></router-view>\n    </main>\n    <footer class=\"page-footer\">\n        <div class=\"footer-copyright\">\n            <div class=\"container center-align\">\n                © {{ year }} - <a class=\"green-text text-lighten-4\" href=\"javascritpt.void(0);\">Leonardo</a>\n            </div>\n        </div>\n    </footer>\n</div>\n";
 
 /***/ },
 /* 20 */
@@ -24931,12 +24935,20 @@
 
 	var _Login2 = _interopRequireDefault(_Login);
 
+	var _Dashboard = __webpack_require__(29);
+
+	var _Dashboard2 = _interopRequireDefault(_Dashboard);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	exports.default = {
 	    '/login': {
 	        name: 'auth.login',
 	        component: _Login2.default
+	    },
+	    '/dashboard': {
+	        name: 'dashboard',
+	        component: _Dashboard2.default
 	    }
 	};
 
@@ -24951,7 +24963,7 @@
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] resources/assets/spa/js/components/Login.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(23)
+	__vue_template__ = __webpack_require__(24)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
@@ -24977,36 +24989,64 @@
 
 /***/ },
 /* 22 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
+
+	var _auth = __webpack_require__(28);
+
+	var _auth2 = _interopRequireDefault(_auth);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 	exports.default = {
 	    data: function data() {
 	        return {
 	            user: {
 	                email: '',
 	                password: ''
+	            },
+	            error: {
+	                error: false,
+	                message: ''
 	            }
 	        };
 	    },
 
 	    methods: {
-	        login: function login() {}
+	        login: function login() {
+	            var _this = this;
+
+	            _auth2.default.login(this.user.email, this.user.password).then(function () {
+	                return _this.$router.go({ name: 'dashboard' });
+	            }).catch(function (responseError) {
+	                switch (responseError.status) {
+	                    case 401:
+	                        _this.error.message = responseError.data;
+	                        break;
+	                    default:
+	                        _this.error.message = "Login failed.";
+	                        break;
+	                }
+	                _this.error.error = true;
+	            });
+	        }
 	    }
 	};
 
 /***/ },
-/* 23 */
+/* 23 */,
+/* 24 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"container\">\n    <div class=\"row\">\n        <div class=\"col s8 offset-s2 z-depth-2\">\n            <h3 class=\"center\">Code Financeiro</h3>\n\n            <form method=\"POST\" @submit.prevent=\"login()\">\n                <div class=\"row\">\n                    <div class=\"input-field col s12\">\n                        <input id=\"email\" type=\"email\" class=\"validate\" name=\"email\" v-model=\"user.email\" required autofocus>\n                        <label for=\"email\" class=\"active\">E-Mail</label>\n                    </div>\n                </div>\n\n                <div class=\"row\">\n                    <div class=\"input-field col s12\">\n                        <input id=\"password\" type=\"password\" class=\"validate \" name=\"password\" v-model=\"user.password\" required>\n                        <label for=\"password\" class=\"active\">Senha</label>\n                    </div>\n                </div>\n\n                <div class=\"row\">\n                    <div class=\"input-field col s12\">\n                        <button type=\"submit\" class=\"btn\">Login</button>\n                    </div>\n                </div>\n            </form>\n\n        </div>\n    </div>\n</div>\n";
+	module.exports = "\n<div class=\"container\">\n    <div class=\"row\">\n        <div class=\"col s8 offset-s2 z-depth-2\">\n            <h3 class=\"center\">Code Financeiro</h3>\n\n            <div class=\"row\" v v-if=\"error.error\">\n                <div class=\"col s12\">\n                    <div class=\"card-panel red\">\n                        <span class=\"white-text\">{{error.message}}</span>\n                    </div>\n                </div>\n            </div>\n\n            <form method=\"POST\" @submit.prevent=\"login()\">\n                <div class=\"row\">\n                    <div class=\"input-field col s12\">\n                        <input id=\"email\" type=\"email\" class=\"validate\" name=\"email\" v-model=\"user.email\" required autofocus>\n                        <label for=\"email\" class=\"active\">E-Mail</label>\n                    </div>\n                </div>\n\n                <div class=\"row\">\n                    <div class=\"input-field col s12\">\n                        <input id=\"password\" type=\"password\" class=\"validate \" name=\"password\" v-model=\"user.password\" required>\n                        <label for=\"password\" class=\"active\">Senha</label>\n                    </div>\n                </div>\n\n                <div class=\"row\">\n                    <div class=\"input-field col s12\">\n                        <button type=\"submit\" class=\"btn\">Login</button>\n                    </div>\n                </div>\n            </form>\n\n        </div>\n    </div>\n</div>\n";
 
 /***/ },
-/* 24 */
+/* 25 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*!
@@ -27718,6 +27758,148 @@
 	  return Router;
 
 	}));
+
+/***/ },
+/* 26 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	var Jwt = exports.Jwt = function () {
+	    function Jwt() {
+	        _classCallCheck(this, Jwt);
+	    }
+
+	    _createClass(Jwt, null, [{
+	        key: 'accessToken',
+	        value: function accessToken(email, password) {
+	            return Vue.http.post('access_token', {
+	                email: email,
+	                password: password
+	            });
+	        }
+	    }]);
+
+	    return Jwt;
+	}();
+
+/***/ },
+/* 27 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.default = {
+	    set: function set(key, value) {
+	        window.localStorage[key] = value;
+	        return window.localStorage[key];
+	    },
+	    get: function get(key) {
+	        var defaultValue = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
+
+	        return window.localStorage[key] || defaultValue;
+	    },
+	    setObject: function setObject(key, value) {
+	        window.localStorage[key] = JSON.stringify(value);
+	        return this.getObject(key);
+	    },
+	    getObject: function getObject(key) {
+	        return JSON.parse(window.localStorage[key] || null);
+	    },
+	    remove: function remove(key) {
+	        window.localStorage.removeItem(key);
+	    }
+	};
+
+/***/ },
+/* 28 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _resources = __webpack_require__(26);
+
+	var _localStorage = __webpack_require__(27);
+
+	var _localStorage2 = _interopRequireDefault(_localStorage);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = {
+	    login: function login(email, password) {
+	        return _resources.Jwt.accessToken(email, password).then(function (response) {
+	            _localStorage2.default.set('token', response.data.token);
+	            return response;
+	        });
+	    }
+	};
+
+/***/ },
+/* 29 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	var __vue_styles__ = {}
+	__vue_script__ = __webpack_require__(30)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] resources/assets/spa/js/components/Dashboard.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(31)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
+	if (__vue_template__) {
+	__vue_options__.template = __vue_template__
+	}
+	if (!__vue_options__.computed) __vue_options__.computed = {}
+	Object.keys(__vue_styles__).forEach(function (key) {
+	var module = __vue_styles__[key]
+	__vue_options__.computed[key] = function () { return module }
+	})
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  var id = "_v-5b20c87a/Dashboard.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 30 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = {};
+
+/***/ },
+/* 31 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div class=\"container\">\n    <div class=\"row\">\n        <div class=\"col-md-8 col-md-offset-2\">\n            <div class=\"panel panel-default\">\n                <div class=\"panel-heading\">Meu Dashboard</div>\n\n                <div class=\"panel-body\">\n                    Menu conteudo.\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n";
 
 /***/ }
 /******/ ]);
