@@ -1424,3 +1424,25 @@
 127.0.0.1 -  26/Dec/2016:19:17:21 +0000 "POST /index.php" 401
 127.0.0.1 -  26/Dec/2016:19:18:31 +0000 "OPTIONS /index.php" 200
 127.0.0.1 -  26/Dec/2016:19:18:31 +0000 "POST /index.php" 200
+[28-Dec-2016 02:12:37] NOTICE: [pool www] 'user' directive is ignored when FPM is not running as root
+[28-Dec-2016 02:12:37] NOTICE: [pool www] 'group' directive is ignored when FPM is not running as root
+[28-Dec-2016 02:12:37] NOTICE: fpm is running, pid 8
+[28-Dec-2016 02:12:37] NOTICE: ready to handle connections
+[28-Dec-2016 02:12:37] NOTICE: systemd monitor interval set to 10000ms
+127.0.0.1 -  28/Dec/2016:02:14:47 +0000 "GET /index.php" 200
+127.0.0.1 -  28/Dec/2016:02:18:17 +0000 "GET /index.php" 200
+127.0.0.1 -  28/Dec/2016:02:18:55 +0000 "GET /index.php" 200
+127.0.0.1 -  28/Dec/2016:02:19:06 +0000 "GET /index.php" 200
+127.0.0.1 -  28/Dec/2016:02:32:57 +0000 "POST /index.php" 422
+127.0.0.1 -  28/Dec/2016:02:34:33 +0000 "POST /index.php" 500
+127.0.0.1 -  28/Dec/2016:02:36:54 +0000 "POST /index.php" 200
+127.0.0.1 -  28/Dec/2016:02:39:12 +0000 "GET /index.php" 401
+127.0.0.1 -  28/Dec/2016:02:40:18 +0000 "POST /index.php" 200
+127.0.0.1 -  28/Dec/2016:02:40:54 +0000 "GET /index.php" 200
+127.0.0.1 -  28/Dec/2016:02:42:39 +0000 "GET /index.php" 401
+127.0.0.1 -  28/Dec/2016:02:43:08 +0000 "GET /index.php" 401
+127.0.0.1 -  28/Dec/2016:02:44:26 +0000 "GET /index.php" 401
+127.0.0.1 -  28/Dec/2016:02:45:10 +0000 "GET /index.php" 401
+127.0.0.1 -  28/Dec/2016:02:45:18 +0000 "POST /index.php" 200
+127.0.0.1 -  28/Dec/2016:02:45:48 +0000 "GET /index.php" 200
+127.0.0.1 -  28/Dec/2016:02:46:08 +0000 "GET /index.php" 200

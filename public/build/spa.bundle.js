@@ -46,7 +46,7 @@
 
 	'use strict';
 
-	var _localStorage = __webpack_require__(27);
+	var _localStorage = __webpack_require__(11);
 
 	var _localStorage2 = _interopRequireDefault(_localStorage);
 
@@ -55,13 +55,13 @@
 	__webpack_require__(2);
 
 	window.Vue = __webpack_require__(6);
-	__webpack_require__(11);
+	__webpack_require__(12);
 	//const url = window.location.protocol + "//" + window.location.host+  "/api";
 	var url = window.location.protocol + "//localhost/api";
 	Vue.http.options.root = url;
 	//console.log('url: -> '+ url);
 
-	__webpack_require__(12);
+	__webpack_require__(13);
 
 	// import Echo from "laravel-echo"
 
@@ -22995,6 +22995,37 @@
 /* 11 */
 /***/ function(module, exports) {
 
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.default = {
+	    set: function set(key, value) {
+	        window.localStorage[key] = value;
+	        return window.localStorage[key];
+	    },
+	    get: function get(key) {
+	        var defaultValue = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
+
+	        return window.localStorage[key] || defaultValue;
+	    },
+	    setObject: function setObject(key, value) {
+	        window.localStorage[key] = JSON.stringify(value);
+	        return this.getObject(key);
+	    },
+	    getObject: function getObject(key) {
+	        return JSON.parse(window.localStorage[key] || null);
+	    },
+	    remove: function remove(key) {
+	        window.localStorage.removeItem(key);
+	    }
+	};
+
+/***/ },
+/* 12 */
+/***/ function(module, exports) {
+
 	/*!
 	 * vue-resource v1.0.3
 	 * https://github.com/vuejs/vue-resource
@@ -24515,20 +24546,20 @@
 	module.exports = plugin;
 
 /***/ },
-/* 12 */
+/* 13 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var _App = __webpack_require__(13);
+	var _App = __webpack_require__(14);
 
 	var _App2 = _interopRequireDefault(_App);
 
-	var _router = __webpack_require__(20);
+	var _router = __webpack_require__(21);
 
 	var _router2 = _interopRequireDefault(_router);
 
-	var _vueRouter = __webpack_require__(25);
+	var _vueRouter = __webpack_require__(30);
 
 	var _vueRouter2 = _interopRequireDefault(_vueRouter);
 
@@ -24545,18 +24576,18 @@
 	}, 'body');
 
 /***/ },
-/* 13 */
+/* 14 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
 	var __vue_styles__ = {}
-	__webpack_require__(14)
-	__vue_script__ = __webpack_require__(18)
+	__webpack_require__(15)
+	__vue_script__ = __webpack_require__(19)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] resources/assets/spa/js/components/App.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(19)
+	__vue_template__ = __webpack_require__(20)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
@@ -24581,16 +24612,16 @@
 	})()}
 
 /***/ },
-/* 14 */
+/* 15 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(15);
+	var content = __webpack_require__(16);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(17)(content, {});
+	var update = __webpack_require__(18)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -24607,10 +24638,10 @@
 	}
 
 /***/ },
-/* 15 */
+/* 16 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(16)();
+	exports = module.exports = __webpack_require__(17)();
 	// imports
 
 
@@ -24621,7 +24652,7 @@
 
 
 /***/ },
-/* 16 */
+/* 17 */
 /***/ function(module, exports) {
 
 	/*
@@ -24677,7 +24708,7 @@
 
 
 /***/ },
-/* 17 */
+/* 18 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -24899,7 +24930,7 @@
 
 
 /***/ },
-/* 18 */
+/* 19 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -24916,13 +24947,13 @@
 	};
 
 /***/ },
-/* 19 */
+/* 20 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div id=\"app\">\n    <header>\n    </header>\n    <main>\n        <router-view></router-view>\n    </main>\n    <footer class=\"page-footer\">\n        <div class=\"footer-copyright\">\n            <div class=\"container center-align\">\n                © {{ year }} - <a class=\"green-text text-lighten-4\" href=\"javascritpt.void(0);\">Leonardo</a>\n            </div>\n        </div>\n    </footer>\n</div>\n";
 
 /***/ },
-/* 20 */
+/* 21 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -24931,11 +24962,11 @@
 	    value: true
 	});
 
-	var _Login = __webpack_require__(21);
+	var _Login = __webpack_require__(22);
 
 	var _Login2 = _interopRequireDefault(_Login);
 
-	var _Dashboard = __webpack_require__(29);
+	var _Dashboard = __webpack_require__(27);
 
 	var _Dashboard2 = _interopRequireDefault(_Dashboard);
 
@@ -24953,17 +24984,17 @@
 	};
 
 /***/ },
-/* 21 */
+/* 22 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
 	var __vue_styles__ = {}
-	__vue_script__ = __webpack_require__(22)
+	__vue_script__ = __webpack_require__(23)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] resources/assets/spa/js/components/Login.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(24)
+	__vue_template__ = __webpack_require__(26)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
@@ -24988,7 +25019,7 @@
 	})()}
 
 /***/ },
-/* 22 */
+/* 23 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -24997,7 +25028,7 @@
 	    value: true
 	});
 
-	var _auth = __webpack_require__(28);
+	var _auth = __webpack_require__(24);
 
 	var _auth2 = _interopRequireDefault(_auth);
 
@@ -25039,14 +25070,124 @@
 	};
 
 /***/ },
-/* 23 */,
 /* 24 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _resources = __webpack_require__(25);
+
+	var _localStorage = __webpack_require__(11);
+
+	var _localStorage2 = _interopRequireDefault(_localStorage);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = {
+	    login: function login(email, password) {
+	        return _resources.Jwt.accessToken(email, password).then(function (response) {
+	            _localStorage2.default.set('token', response.data.token);
+	            return response;
+	        });
+	    }
+	};
+
+/***/ },
+/* 25 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	var Jwt = exports.Jwt = function () {
+	    function Jwt() {
+	        _classCallCheck(this, Jwt);
+	    }
+
+	    _createClass(Jwt, null, [{
+	        key: 'accessToken',
+	        value: function accessToken(email, password) {
+	            return Vue.http.post('access_token', {
+	                email: email,
+	                password: password
+	            });
+	        }
+	    }]);
+
+	    return Jwt;
+	}();
+
+/***/ },
+/* 26 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"container\">\n    <div class=\"row\">\n        <div class=\"col s8 offset-s2 z-depth-2\">\n            <h3 class=\"center\">Code Financeiro</h3>\n\n            <div class=\"row\" v v-if=\"error.error\">\n                <div class=\"col s12\">\n                    <div class=\"card-panel red\">\n                        <span class=\"white-text\">{{error.message}}</span>\n                    </div>\n                </div>\n            </div>\n\n            <form method=\"POST\" @submit.prevent=\"login()\">\n                <div class=\"row\">\n                    <div class=\"input-field col s12\">\n                        <input id=\"email\" type=\"email\" class=\"validate\" name=\"email\" v-model=\"user.email\" required autofocus>\n                        <label for=\"email\" class=\"active\">E-Mail</label>\n                    </div>\n                </div>\n\n                <div class=\"row\">\n                    <div class=\"input-field col s12\">\n                        <input id=\"password\" type=\"password\" class=\"validate \" name=\"password\" v-model=\"user.password\" required>\n                        <label for=\"password\" class=\"active\">Senha</label>\n                    </div>\n                </div>\n\n                <div class=\"row\">\n                    <div class=\"input-field col s12\">\n                        <button type=\"submit\" class=\"btn\">Login</button>\n                    </div>\n                </div>\n            </form>\n\n        </div>\n    </div>\n</div>\n";
 
 /***/ },
-/* 25 */
+/* 27 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	var __vue_styles__ = {}
+	__vue_script__ = __webpack_require__(28)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] resources/assets/spa/js/components/Dashboard.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(29)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
+	if (__vue_template__) {
+	__vue_options__.template = __vue_template__
+	}
+	if (!__vue_options__.computed) __vue_options__.computed = {}
+	Object.keys(__vue_styles__).forEach(function (key) {
+	var module = __vue_styles__[key]
+	__vue_options__.computed[key] = function () { return module }
+	})
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  var id = "_v-5b20c87a/Dashboard.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 28 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = {};
+
+/***/ },
+/* 29 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div class=\"container\">\n    <div class=\"row\">\n        <div class=\"col-md-8 col-md-offset-2\">\n            <div class=\"panel panel-default\">\n                <div class=\"panel-heading\">Meu Dashboard</div>\n\n                <div class=\"panel-body\">\n                    Menu conteudo.\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n";
+
+/***/ },
+/* 30 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*!
@@ -27758,148 +27899,6 @@
 	  return Router;
 
 	}));
-
-/***/ },
-/* 26 */
-/***/ function(module, exports) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	var Jwt = exports.Jwt = function () {
-	    function Jwt() {
-	        _classCallCheck(this, Jwt);
-	    }
-
-	    _createClass(Jwt, null, [{
-	        key: 'accessToken',
-	        value: function accessToken(email, password) {
-	            return Vue.http.post('access_token', {
-	                email: email,
-	                password: password
-	            });
-	        }
-	    }]);
-
-	    return Jwt;
-	}();
-
-/***/ },
-/* 27 */
-/***/ function(module, exports) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	exports.default = {
-	    set: function set(key, value) {
-	        window.localStorage[key] = value;
-	        return window.localStorage[key];
-	    },
-	    get: function get(key) {
-	        var defaultValue = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
-
-	        return window.localStorage[key] || defaultValue;
-	    },
-	    setObject: function setObject(key, value) {
-	        window.localStorage[key] = JSON.stringify(value);
-	        return this.getObject(key);
-	    },
-	    getObject: function getObject(key) {
-	        return JSON.parse(window.localStorage[key] || null);
-	    },
-	    remove: function remove(key) {
-	        window.localStorage.removeItem(key);
-	    }
-	};
-
-/***/ },
-/* 28 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-
-	var _resources = __webpack_require__(26);
-
-	var _localStorage = __webpack_require__(27);
-
-	var _localStorage2 = _interopRequireDefault(_localStorage);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	exports.default = {
-	    login: function login(email, password) {
-	        return _resources.Jwt.accessToken(email, password).then(function (response) {
-	            _localStorage2.default.set('token', response.data.token);
-	            return response;
-	        });
-	    }
-	};
-
-/***/ },
-/* 29 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __vue_script__, __vue_template__
-	var __vue_styles__ = {}
-	__vue_script__ = __webpack_require__(30)
-	if (__vue_script__ &&
-	    __vue_script__.__esModule &&
-	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] resources/assets/spa/js/components/Dashboard.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(31)
-	module.exports = __vue_script__ || {}
-	if (module.exports.__esModule) module.exports = module.exports.default
-	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
-	if (__vue_template__) {
-	__vue_options__.template = __vue_template__
-	}
-	if (!__vue_options__.computed) __vue_options__.computed = {}
-	Object.keys(__vue_styles__).forEach(function (key) {
-	var module = __vue_styles__[key]
-	__vue_options__.computed[key] = function () { return module }
-	})
-	if (false) {(function () {  module.hot.accept()
-	  var hotAPI = require("vue-hot-reload-api")
-	  hotAPI.install(require("vue"), false)
-	  if (!hotAPI.compatible) return
-	  var id = "_v-5b20c87a/Dashboard.vue"
-	  if (!module.hot.data) {
-	    hotAPI.createRecord(id, module.exports)
-	  } else {
-	    hotAPI.update(id, module.exports, __vue_template__)
-	  }
-	})()}
-
-/***/ },
-/* 30 */
-/***/ function(module, exports) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.default = {};
-
-/***/ },
-/* 31 */
-/***/ function(module, exports) {
-
-	module.exports = "\n<div class=\"container\">\n    <div class=\"row\">\n        <div class=\"col-md-8 col-md-offset-2\">\n            <div class=\"panel panel-default\">\n                <div class=\"panel-heading\">Meu Dashboard</div>\n\n                <div class=\"panel-body\">\n                    Menu conteudo.\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n";
 
 /***/ }
 /******/ ]);
