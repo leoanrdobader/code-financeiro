@@ -6,6 +6,10 @@ export default {
         name: 'auth.login',
         component: LoginComponent
     },
+    '/logout':{
+        name: 'auth.logout',
+        component: LogoutComponent
+    },
     '/dashboard':{
         name: 'dashboard',
         component: DashboardComponent

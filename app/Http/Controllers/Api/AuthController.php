@@ -60,7 +60,7 @@ class AuthController extends Controller
     {
         return response()->json([
             Lang::get('auth.failed')
-        ],401);
+        ],400);
     }
 
     public function refreshToken(Request $request){
