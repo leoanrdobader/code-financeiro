@@ -18,7 +18,7 @@
                 <div class="row">
                     <div class="input-field col s12">
                         <?php $messageError = $errors->has('password') ? "data-error='{ $errors->first('password')}'" : null ?>
-                        <input id="password" type="password" class="validate <?php echo e($messageError ? 'invalide' : $messageError); ?>" name="password" value="<?php echo e(old('password')); ?>" required autofocus>
+                        <input id="password" type="password" class="validate <?php echo e($messageError ? 'invalide' : $messageError); ?>" name="password" value="<?php echo e(old('password')); ?>" required>
                         <label for="password" <?php echo $messageError; ?>>Senha</label>
                     </div>
                 </div>

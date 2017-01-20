@@ -11,10 +11,10 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(\CodeFin\User::class,1)
+        factory(\CodeFin\Models\User::class,1)
             ->states('admin')
             ->create(['name'=>'Icnex','email'=>'admin@user.com']);
 
-        factory(\CodeFin\User::class,1)->create(['name'=>'Cliente comum','email'=>'cliente@user.com']);
+        factory(\CodeFin\Models\User::class,1)->create(['name'=>'Cliente comum','email'=>'cliente@user.com']);
     }
 }
