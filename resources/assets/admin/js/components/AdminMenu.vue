@@ -1,7 +1,7 @@
 <template>
     <!-- Dropdown Structure -->
     <ul :id="o.id" class="dropdown-content" v-for="o in config.menusDropdown">
-        <li v-for="item in o.items">
+        <li v-for="item in o.items" :class="menuItemClass(item)">
             <a :href="item.url">{{ item.name }}</a>
         </li>
     </ul>
@@ -22,7 +22,7 @@
                     <a href="javascript:void(0);" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
                     <ul class="right hide-on-med-and-down">
                         <!-- Dropdown Trigger -->
-                        <li v-for="o in config.menus" >
+                        <li v-for="o in config.menus" :class="menuItemClass(o)">
                             <a v-if="o.dropdownId" class="dropdown-button" href="javascript:void(0);" :data-activates="o.dropdownId">{{ o.name }}<i class="material-icons right">arrow_drop_down</i></a>
                             <a v-else :href="o.url">{{ o.name }}</a>
                         </li>
@@ -63,6 +63,24 @@
         methods: {
             goToLogout(){
                 $('#logout-form').submit();
+            },
+            menuItemClass(menu){
+                let menuClass = ['active'];
+                if(menu.active){
+                    return menuClass;
+                }
+                if(menu.dropdownId != undefined ){
+                    let dropdown = this.config.menusDropdown.find((element) => {
+                        return element.id == menu.dropdownId
+                    });
+                    if(dropdown){
+                        for(let o of dropdown.items){
+                            if(o.active){
+                                return menuClass;
+                            }
+                        }
+                    }
+                }
             }
         }
     }

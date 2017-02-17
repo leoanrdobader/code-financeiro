@@ -21,6 +21,9 @@
         "prettus/l5-repository": "~2.6.6"
     },
     "autoload": {
+        "files":[
+          "app/helpers.php"
+        ],
         "classmap": [
             "database"
         ],
@@ -42,6 +45,7 @@
         ],
         "post-install-cmd": [
             "Illuminate\\Foundation\\ComposerScripts::postInstall",
+            "ln -sr storage/app/public public/storage",
             "php artisan optimize"
         ],
         "post-update-cmd": [

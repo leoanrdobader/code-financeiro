@@ -6,11 +6,12 @@
             <h4>Editar banco</h4>
             {!! Form::model($bank,[
                         'route' =>['admin.banks.update', 'bank'=>$bank->id ],
-                        'method' => 'PUT'
+                        'method' => 'PUT',
+                        'files' => true
                         ] ) !!}
             @include('admin.banks._form')
             <div class="row">
-                {!! Form::submit('Salvar banco',['class'=>'btn waves-effect']) !!}
+                {!! Form::submit('Salvar banco',['class'=>'btn waves-effect right']) !!}
             </div>
             {!! Form::close() !!}
         </div>

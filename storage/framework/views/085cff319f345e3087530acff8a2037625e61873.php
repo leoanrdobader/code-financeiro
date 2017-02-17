@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
 
-    <title><?php echo e(config('app.name', 'Laravel *****')); ?></title>
+    <title><?php echo e(config('app.name', 'Laravel')); ?></title>
 
     <!-- Styles -->
     <link href="<?php echo e(asset('css/admin.css')); ?>" rel="stylesheet">
@@ -28,19 +28,19 @@
                 <?php $menuConfig = [
                         'name'=>Auth::user()->name,
                         'menus'=>[
-                                ['name' => 'Banco', 'url' => route('admin.banks.index')],
-//                                ['name' => 'Contas a pagar', 'url' => '/teste', 'dropdownId'=> 'teste'],
+                                ['name' => 'Banco', 'url' => route('admin.banks.index'),'active'=>isRouteActive('admin.banks.index')],
+                                ['name' => 'Contas a pagar', 'url' => '/teste', 'dropdownId'=> 'teste'],
 //                                ['name' => 'Contas a receber', 'url' => '/teste1']
                         ],
-                     /*   'menusDropdown'=>[
+                        'menusDropdown'=>[
                                 [
                                         'id'=>'teste',
                                         'items'=>[
-                                                ['name'=>'Listar contas', 'url'=>'/listar'],
-                                                ['name'=>'Criar Conta', 'url'=>'/criar'],
+                                                ['name'=>'Listar contas', 'url'=> route('admin.banks.index'), 'active'=>isRouteActive('admin.banks.edit')],
+                                                ['name'=>'Criar Conta', 'url'=>route('admin.banks.index'), 'active'=>isRouteActive('admin.banks.index')],
                                         ]
                                 ]
-                        ],*/
+                        ],
                         'urlLogout'=>env('URL_ADMIN_LOGOUT'),
                         'csrftoken'=>csrf_token()
                 ];

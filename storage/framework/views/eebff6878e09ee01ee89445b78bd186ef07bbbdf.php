@@ -1,18 +1,12 @@
 <?php $__env->startSection('content'); ?>
     <div class="container">
         <div class="row">
-            <?php echo Form::open(['route' => 'admin.banks.store']); ?>
+            <h4>Novo banco</h4>
+            <?php echo Form::open(['route' => 'admin.banks.store', 'files' => true]); ?>
 
+                <?php echo $__env->make('admin.banks._form', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
                 <div class="row">
-                    <div class="input-field col s6">
-                        <?php echo Form::label('name','Nome'); ?>
-
-                        <?php echo Form::text('name',null); ?>
-
-                    </div>
-                </div>
-                <div class="row">
-                    <?php echo Form::submit('Criar banco',['class'=>'btn waves-effect']); ?>
+                    <?php echo Form::submit('Criar banco',['class'=>'btn waves-effect right']); ?>
 
                 </div>
             <?php echo Form::close(); ?>

@@ -12,4 +12,9 @@ class Bank extends Model implements Transformable
 
     protected $fillable = ['name', 'logo'];
 
+    public static function logosDir()
+    {
+        return 'banks/images';
+    }
+
 }

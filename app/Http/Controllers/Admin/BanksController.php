@@ -2,9 +2,11 @@
 
 namespace CodeFin\Http\Controllers\Admin;
 
+use CodeFin\Events\BankCreatedEvent;
 use CodeFin\Http\Controllers\Controller;
 use CodeFin\Http\Controllers\Response;
 
+use CodeFin\Models\Bank;
 use Prettus\Validator\Contracts\ValidatorInterface;
 use Prettus\Validator\Exceptions\ValidatorException;
 use CodeFin\Http\Requests\BankCreateRequest;
@@ -39,13 +41,17 @@ class BanksController extends Controller
     public function index()
     {
         //$this->repository->pushCriteria(app('Prettus\Repository\Criteria\RequestCriteria'));
-        $banks = $this->repository->paginate(5);
+        $banks = $this->repository->paginate(10);
+
 
         /*if (request()->wantsJson()) {
             return response()->json([
                 'data' => $banks,
             ]);
         }*/
+        $bank = new Bank();
+        $bank->name = 'Itau';
+        event(new BankCreatedEvent($bank));
 
         return view('admin.banks.index', compact('banks'));
     }
@@ -64,9 +70,7 @@ class BanksController extends Controller
     public function store(BankCreateRequest $request)
     {
             $data = $request->all();
-            $data['logo'] = md5(time()).'.jpeg';
             $this->repository->create($data);
-            //$bank = $this->repository->create($request->all());
 
             /*if ($request->wantsJson()) {
                 $response = [
@@ -108,6 +112,7 @@ class BanksController extends Controller
      */
     public function update(BankUpdateRequest $request, $id)
     {
+
         $bank = $this->repository->update($request->all(),$id);
 
         /*if ($request->wantsJson()) {
