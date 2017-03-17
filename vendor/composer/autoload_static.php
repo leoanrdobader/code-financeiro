@@ -79,6 +79,7 @@ class ComposerStaticInitfd07d536cd0de8c4d9953e5a5fac1dcf
         ),
         'L' => 
         array (
+            'League\\Fractal\\' => 15,
             'League\\Flysystem\\' => 17,
         ),
         'I' => 
@@ -228,6 +229,10 @@ class ComposerStaticInitfd07d536cd0de8c4d9953e5a5fac1dcf
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
         ),
+        'League\\Fractal\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/league/fractal/src',
+        ),
         'League\\Flysystem\\' => 
         array (
             0 => __DIR__ . '/..' . '/league/flysystem/src',
@@ -315,6 +320,8 @@ class ComposerStaticInitfd07d536cd0de8c4d9953e5a5fac1dcf
 
     public static $classMap = array (
         'AddRoleToUsersTable' => __DIR__ . '/../..' . '/database/migrations/2016_11_21_173448_add_role_to_users_table.php',
+        'BankAccountsTableSeeder' => __DIR__ . '/../..' . '/database/seeds/BankAccountsTableSeeder.php',
+        'CreateBankAccountsTable' => __DIR__ . '/../..' . '/database/migrations/2017_03_09_185604_create_bank_accounts_table.php',
         'CreateBankLogoDefault' => __DIR__ . '/../..' . '/database/migrations/2017_02_17_184701_create_bank_logo_default.php',
         'CreateBanksData' => __DIR__ . '/../..' . '/database/migrations/2017_02_14_194421_create_banks_data.php',
         'CreateBanksTable' => __DIR__ . '/../..' . '/database/migrations/2017_01_18_191307_create_banks_table.php',

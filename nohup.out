@@ -2652,3 +2652,140 @@
 127.0.0.1 -  17/Feb/2017:19:06:49 +0000 "GET /index.php" 404
 127.0.0.1 -  17/Feb/2017:19:06:49 +0000 "GET /index.php" 404
 127.0.0.1 -  17/Feb/2017:19:07:04 +0000 "GET /index.php" 404
+[17-Feb-2017 22:01:18] NOTICE: [pool www] 'user' directive is ignored when FPM is not running as root
+[17-Feb-2017 22:01:18] NOTICE: [pool www] 'group' directive is ignored when FPM is not running as root
+[17-Feb-2017 22:01:18] NOTICE: fpm is running, pid 8
+[17-Feb-2017 22:01:18] NOTICE: ready to handle connections
+[17-Feb-2017 22:01:18] NOTICE: systemd monitor interval set to 10000ms
+127.0.0.1 -  17/Feb/2017:22:05:57 +0000 "GET /index.php" 200
+127.0.0.1 -  17/Feb/2017:22:12:26 +0000 "GET /index.php" 200
+127.0.0.1 -  17/Feb/2017:22:12:31 +0000 "GET /index.php" 200
+[09-Mar-2017 17:47:42] NOTICE: [pool www] 'user' directive is ignored when FPM is not running as root
+[09-Mar-2017 17:47:42] NOTICE: [pool www] 'group' directive is ignored when FPM is not running as root
+[09-Mar-2017 17:47:42] NOTICE: fpm is running, pid 8
+[09-Mar-2017 17:47:42] NOTICE: ready to handle connections
+[09-Mar-2017 17:47:42] NOTICE: systemd monitor interval set to 10000ms
+[15-Mar-2017 13:26:58] NOTICE: [pool www] 'user' directive is ignored when FPM is not running as root
+[15-Mar-2017 13:26:58] NOTICE: [pool www] 'group' directive is ignored when FPM is not running as root
+[15-Mar-2017 13:26:58] NOTICE: fpm is running, pid 8
+[15-Mar-2017 13:26:58] NOTICE: ready to handle connections
+[15-Mar-2017 13:26:58] NOTICE: systemd monitor interval set to 10000ms
+127.0.0.1 -  15/Mar/2017:13:27:32 +0000 "GET /index.php" 200
+127.0.0.1 -  15/Mar/2017:13:31:33 +0000 "GET /index.php" 200
+127.0.0.1 -  15/Mar/2017:13:39:00 +0000 "OPTIONS /index.php" 200
+127.0.0.1 -  15/Mar/2017:13:39:04 +0000 "OPTIONS /index.php" 200
+127.0.0.1 -  15/Mar/2017:13:39:01 +0000 "POST /index.php" 400
+127.0.0.1 -  15/Mar/2017:13:39:04 +0000 "POST /index.php" 400
+127.0.0.1 -  15/Mar/2017:13:39:21 +0000 "OPTIONS /index.php" 200
+127.0.0.1 -  15/Mar/2017:13:39:21 +0000 "POST /index.php" 400
+127.0.0.1 -  15/Mar/2017:13:39:26 +0000 "OPTIONS /index.php" 200
+127.0.0.1 -  15/Mar/2017:13:39:26 +0000 "POST /index.php" 400
+127.0.0.1 -  15/Mar/2017:13:39:31 +0000 "GET /index.php" 200
+127.0.0.1 -  15/Mar/2017:13:39:50 +0000 "OPTIONS /index.php" 200
+127.0.0.1 -  15/Mar/2017:13:39:50 +0000 "POST /index.php" 200
+127.0.0.1 -  15/Mar/2017:13:39:50 +0000 "OPTIONS /index.php" 200
+127.0.0.1 -  15/Mar/2017:13:39:50 +0000 "GET /index.php" 200
+127.0.0.1 -  15/Mar/2017:13:39:51 +0000 "GET /index.php" 404
+127.0.0.1 -  15/Mar/2017:13:39:51 +0000 "GET /index.php" 404
+127.0.0.1 -  15/Mar/2017:13:40:17 +0000 "GET /index.php" 200
+127.0.0.1 -  15/Mar/2017:13:40:26 +0000 "OPTIONS /index.php" 200
+127.0.0.1 -  15/Mar/2017:13:40:26 +0000 "POST /index.php" 200
+127.0.0.1 -  15/Mar/2017:13:40:27 +0000 "OPTIONS /index.php" 200
+127.0.0.1 -  15/Mar/2017:13:40:27 +0000 "GET /index.php" 200
+127.0.0.1 -  15/Mar/2017:13:51:41 +0000 "GET /index.php" 200
+127.0.0.1 -  15/Mar/2017:13:51:49 +0000 "OPTIONS /index.php" 200
+127.0.0.1 -  15/Mar/2017:13:51:49 +0000 "POST /index.php" 200
+127.0.0.1 -  15/Mar/2017:13:51:49 +0000 "OPTIONS /index.php" 200
+127.0.0.1 -  15/Mar/2017:13:51:49 +0000 "GET /index.php" 200
+127.0.0.1 -  15/Mar/2017:14:02:29 +0000 "GET /index.php" 200
+127.0.0.1 -  15/Mar/2017:14:02:44 +0000 "OPTIONS /index.php" 200
+127.0.0.1 -  15/Mar/2017:14:02:44 +0000 "POST /index.php" 200
+127.0.0.1 -  15/Mar/2017:14:02:44 +0000 "OPTIONS /index.php" 200
+127.0.0.1 -  15/Mar/2017:14:02:44 +0000 "GET /index.php" 200
+127.0.0.1 -  15/Mar/2017:14:09:12 +0000 "GET /index.php" 200
+127.0.0.1 -  15/Mar/2017:14:09:48 +0000 "OPTIONS /index.php" 200
+127.0.0.1 -  15/Mar/2017:14:09:48 +0000 "POST /index.php" 200
+127.0.0.1 -  15/Mar/2017:14:09:48 +0000 "OPTIONS /index.php" 200
+127.0.0.1 -  15/Mar/2017:14:09:48 +0000 "GET /index.php" 200
+127.0.0.1 -  15/Mar/2017:14:10:13 +0000 "GET /index.php" 200
+127.0.0.1 -  15/Mar/2017:14:10:25 +0000 "OPTIONS /index.php" 200
+127.0.0.1 -  15/Mar/2017:14:10:25 +0000 "POST /index.php" 200
+127.0.0.1 -  15/Mar/2017:14:10:25 +0000 "OPTIONS /index.php" 200
+127.0.0.1 -  15/Mar/2017:14:10:25 +0000 "GET /index.php" 200
+127.0.0.1 -  15/Mar/2017:14:10:59 +0000 "GET /index.php" 200
+127.0.0.1 -  15/Mar/2017:14:11:16 +0000 "OPTIONS /index.php" 200
+127.0.0.1 -  15/Mar/2017:14:11:16 +0000 "POST /index.php" 200
+127.0.0.1 -  15/Mar/2017:14:11:16 +0000 "OPTIONS /index.php" 200
+127.0.0.1 -  15/Mar/2017:14:11:16 +0000 "GET /index.php" 200
+127.0.0.1 -  15/Mar/2017:14:12:19 +0000 "GET /index.php" 200
+127.0.0.1 -  15/Mar/2017:14:12:25 +0000 "OPTIONS /index.php" 200
+127.0.0.1 -  15/Mar/2017:14:12:25 +0000 "POST /index.php" 200
+127.0.0.1 -  15/Mar/2017:14:12:25 +0000 "OPTIONS /index.php" 200
+127.0.0.1 -  15/Mar/2017:14:12:25 +0000 "GET /index.php" 200
+127.0.0.1 -  15/Mar/2017:14:12:53 +0000 "GET /index.php" 200
+127.0.0.1 -  15/Mar/2017:14:13:06 +0000 "OPTIONS /index.php" 200
+127.0.0.1 -  15/Mar/2017:14:13:06 +0000 "POST /index.php" 200
+127.0.0.1 -  15/Mar/2017:14:13:07 +0000 "OPTIONS /index.php" 200
+127.0.0.1 -  15/Mar/2017:14:13:07 +0000 "GET /index.php" 200
+127.0.0.1 -  15/Mar/2017:14:17:21 +0000 "GET /index.php" 200
+127.0.0.1 -  15/Mar/2017:14:17:32 +0000 "OPTIONS /index.php" 200
+127.0.0.1 -  15/Mar/2017:14:17:32 +0000 "POST /index.php" 200
+127.0.0.1 -  15/Mar/2017:14:17:32 +0000 "OPTIONS /index.php" 200
+127.0.0.1 -  15/Mar/2017:14:17:32 +0000 "GET /index.php" 200
+127.0.0.1 -  15/Mar/2017:18:44:11 +0000 "GET /index.php" 200
+127.0.0.1 -  15/Mar/2017:18:44:38 +0000 "GET /index.php" 200
+127.0.0.1 -  15/Mar/2017:18:45:03 +0000 "GET /index.php" 200
+127.0.0.1 -  16/Mar/2017:17:19:12 +0000 "GET /index.php" 200
+127.0.0.1 -  16/Mar/2017:17:51:18 +0000 "GET /index.php" 200
+127.0.0.1 -  16/Mar/2017:17:51:24 +0000 "GET /index.php" 200
+127.0.0.1 -  16/Mar/2017:17:52:13 +0000 "GET /index.php" 200
+127.0.0.1 -  16/Mar/2017:17:52:30 +0000 "GET /index.php" 200
+127.0.0.1 -  16/Mar/2017:17:56:16 +0000 "GET /index.php" 200
+127.0.0.1 -  16/Mar/2017:17:56:51 +0000 "GET /index.php" 200
+127.0.0.1 -  16/Mar/2017:17:57:48 +0000 "GET /index.php" 200
+127.0.0.1 -  16/Mar/2017:18:08:58 +0000 "GET /index.php" 200
+127.0.0.1 -  16/Mar/2017:18:09:28 +0000 "GET /index.php" 200
+127.0.0.1 -  16/Mar/2017:18:10:14 +0000 "GET /index.php" 200
+127.0.0.1 -  16/Mar/2017:18:18:35 +0000 "GET /index.php" 401
+127.0.0.1 -  16/Mar/2017:18:19:31 +0000 "POST /index.php" 200
+127.0.0.1 -  16/Mar/2017:18:20:04 +0000 "GET /index.php" 200
+127.0.0.1 -  16/Mar/2017:18:35:57 +0000 "GET /index.php" 500
+[16-Mar-2017 18:35:57] WARNING: [pool www] child 18 said into stderr: "NOTICE: PHP message: PHP Fatal error:  Cannot declare class CodeFin\Http\Controllers\BankAccountsController, because the name is already in use in /var/www/app/app/Http/Controllers/Api/BankAccountsController.php on line 0"
+[16-Mar-2017 18:36:51] WARNING: [pool www] child 19 said into stderr: "NOTICE: PHP message: PHP Fatal error:  Cannot declare class CodeFin\Http\Controllers\BankAccountsController, because the name is already in use in /var/www/app/app/Http/Controllers/Api/BankAccountsController.php on line 0"
+127.0.0.1 -  16/Mar/2017:18:36:51 +0000 "GET /index.php" 500
+127.0.0.1 -  16/Mar/2017:19:29:44 +0000 "GET /index.php" 401
+127.0.0.1 -  16/Mar/2017:19:29:52 +0000 "GET /index.php" 401
+127.0.0.1 -  16/Mar/2017:19:29:57 +0000 "POST /index.php" 200
+127.0.0.1 -  16/Mar/2017:19:30:23 +0000 "GET /index.php" 200
+127.0.0.1 -  16/Mar/2017:19:32:59 +0000 "GET /index.php" 200
+127.0.0.1 -  16/Mar/2017:19:34:08 +0000 "GET /index.php" 401
+127.0.0.1 -  16/Mar/2017:19:34:10 +0000 "GET /index.php" 401
+127.0.0.1 -  16/Mar/2017:19:34:12 +0000 "GET /index.php" 401
+127.0.0.1 -  16/Mar/2017:19:34:13 +0000 "GET /index.php" 401
+127.0.0.1 -  16/Mar/2017:19:40:03 +0000 "POST /index.php" 200
+127.0.0.1 -  16/Mar/2017:19:40:21 +0000 "GET /index.php" 200
+127.0.0.1 -  16/Mar/2017:19:41:53 +0000 "GET /index.php" 401
+127.0.0.1 -  16/Mar/2017:19:42:28 +0000 "POST /index.php" 200
+127.0.0.1 -  16/Mar/2017:19:42:43 +0000 "GET /index.php" 200
+127.0.0.1 -  16/Mar/2017:19:42:50 +0000 "GET /index.php" 200
+127.0.0.1 -  16/Mar/2017:19:43:40 +0000 "POST /index.php" 201
+127.0.0.1 -  16/Mar/2017:19:45:45 +0000 "POST /index.php" 201
+127.0.0.1 -  16/Mar/2017:19:47:13 +0000 "PUT /index.php" 405
+127.0.0.1 -  16/Mar/2017:20:26:18 +0000 "PUT /index.php" 200
+127.0.0.1 -  16/Mar/2017:20:37:22 +0000 "DELETE /index.php" 204
+127.0.0.1 -  16/Mar/2017:20:37:52 +0000 "GET /index.php" 200
+127.0.0.1 -  16/Mar/2017:20:44:35 +0000 "GET /index.php" 401
+127.0.0.1 -  16/Mar/2017:20:44:49 +0000 "GET /index.php" 401
+127.0.0.1 -  16/Mar/2017:20:44:55 +0000 "GET /index.php" 401
+127.0.0.1 -  16/Mar/2017:20:45:04 +0000 "POST /index.php" 200
+127.0.0.1 -  16/Mar/2017:20:45:22 +0000 "GET /index.php" 200
+127.0.0.1 -  16/Mar/2017:20:45:27 +0000 "GET /index.php" 404
+[17-Mar-2017 11:54:46] NOTICE: [pool www] 'user' directive is ignored when FPM is not running as root
+[17-Mar-2017 11:54:46] NOTICE: [pool www] 'group' directive is ignored when FPM is not running as root
+[17-Mar-2017 11:54:46] NOTICE: fpm is running, pid 8
+[17-Mar-2017 11:54:46] NOTICE: ready to handle connections
+[17-Mar-2017 11:54:46] NOTICE: systemd monitor interval set to 10000ms
+127.0.0.1 -  17/Mar/2017:11:58:16 +0000 "GET /index.php" 200
+127.0.0.1 -  17/Mar/2017:12:13:06 +0000 "GET /index.php" 401
+127.0.0.1 -  17/Mar/2017:12:13:10 +0000 "POST /index.php" 200
+127.0.0.1 -  17/Mar/2017:12:13:25 +0000 "GET /index.php" 404

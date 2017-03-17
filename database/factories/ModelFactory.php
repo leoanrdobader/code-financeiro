@@ -28,3 +28,12 @@ $factory->state(\CodeFin\Models\User::class, 'admin',function (Faker\Generator $
    ];
 });
 
+$factory->define(\CodeFin\Models\BankAccount::class, function (Faker\Generator $faker) {
+    static $password;
+
+    return [
+        'name' => $faker->city,
+        'agency' => rand(1000,6000).'-'.rand(0,9),
+        'account' => rand(10000,60000).'-'.rand(0,9),
+    ];
+});

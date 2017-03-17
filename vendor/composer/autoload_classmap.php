@@ -7,6 +7,8 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'AddRoleToUsersTable' => $baseDir . '/database/migrations/2016_11_21_173448_add_role_to_users_table.php',
+    'BankAccountsTableSeeder' => $baseDir . '/database/seeds/BankAccountsTableSeeder.php',
+    'CreateBankAccountsTable' => $baseDir . '/database/migrations/2017_03_09_185604_create_bank_accounts_table.php',
     'CreateBankLogoDefault' => $baseDir . '/database/migrations/2017_02_17_184701_create_bank_logo_default.php',
     'CreateBanksData' => $baseDir . '/database/migrations/2017_02_14_194421_create_banks_data.php',
     'CreateBanksTable' => $baseDir . '/database/migrations/2017_01_18_191307_create_banks_table.php',

@@ -8,9 +8,8 @@ const router = new VueRouter();
 router.map(routerMap);
 
 router.beforeEach(({to, next}) => {
-    console.log(Auth.user);
     if(to.auth && !Auth.user.check){
-        console.log('auth.login');
+        console.log('redireciona');
         return router.go({name: 'auth.login'});
     }
     next();

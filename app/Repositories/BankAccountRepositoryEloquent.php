@@ -4,14 +4,14 @@ namespace CodeFin\Repositories;
 
 use Prettus\Repository\Eloquent\BaseRepository;
 use Prettus\Repository\Criteria\RequestCriteria;
-use CodeFin\Repositories\MyModelRepository;
-use CodeFin\Models\MyModel;
+use CodeFin\Repositories\BankAccountRepository;
+use CodeFin\Models\BankAccount;
 
 /**
- * Class MyModelRepositoryEloquent
+ * Class BankAccountRepositoryEloquent
  * @package namespace CodeFin\Repositories;
  */
-class MyModelRepositoryEloquent extends BaseRepository implements MyModelRepository
+class BankAccountRepositoryEloquent extends BaseRepository implements BankAccountRepository
 {
     /**
      * Specify Model class name
@@ -20,7 +20,7 @@ class MyModelRepositoryEloquent extends BaseRepository implements MyModelReposit
      */
     public function model()
     {
-        return MyModel::class;
+        return BankAccount::class;
     }
 
     

@@ -70,7 +70,6 @@
                             this.error.error = true;
                         });
             }
-
         }
     }
 </script>
