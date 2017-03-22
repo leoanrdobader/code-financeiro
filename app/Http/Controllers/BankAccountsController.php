@@ -39,14 +39,7 @@ class BankAccountsController extends Controller
      */
     public function index()
     {
-        $bankAccounts = $this->repository->all();
-
-        if (request()->wantsJson()) {
-
-            return response()->json([
-                'data' => $bankAccounts,
-            ]);
-        }
+        $bankAccounts = $this->repository->skipPresenter(false)->all();
 
         return $bankAccounts;
     }
@@ -63,7 +56,7 @@ class BankAccountsController extends Controller
 
 
             $bankAccount = $this->repository->create($request->all());
-            return response()->json($bankAccount->toArray(), 201);
+            return response()->json($bankAccount, 201);
     }
 
 
@@ -80,7 +73,7 @@ class BankAccountsController extends Controller
 
         if (request()->wantsJson()) {
 
-            return response()->json($bankAccount->toArray());
+            return response()->json($bankAccount);
         }
 
         return view('bankAccounts.show', compact('bankAccount'));
@@ -99,7 +92,7 @@ class BankAccountsController extends Controller
     {
 
             $bankAccount = $this->repository->update($request->all(), $id);
-            return response()->json($bankAccount->toArray());
+            return response()->json($bankAccount);
     }
 
 

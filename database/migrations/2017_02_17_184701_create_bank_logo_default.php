@@ -31,6 +31,19 @@ class CreateBankLogoDefault extends Migration
      */
     public function down()
     {
-        //
+        $path = \CodeFin\Models\Bank::logosDir();
+        $dir = dir(Storage::disk('public')->getAdapter()->getPathPrefix().$path);
+
+        while($file = $dir->read()){
+            switch ($file){
+                case ".":
+                case "..":
+                    break;
+                default:
+                    Storage::disk('public')->delete($path.'/'.$file);
+                    break;
+            }
+        }
+        $dir -> close();
     }
 }
