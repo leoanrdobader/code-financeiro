@@ -2927,3 +2927,31 @@
 [22-Mar-2017 11:53:01] NOTICE: fpm is running, pid 8
 [22-Mar-2017 11:53:01] NOTICE: ready to handle connections
 [22-Mar-2017 11:53:01] NOTICE: systemd monitor interval set to 10000ms
+[31-Mar-2017 19:57:57] NOTICE: [pool www] 'user' directive is ignored when FPM is not running as root
+[31-Mar-2017 19:57:57] NOTICE: [pool www] 'group' directive is ignored when FPM is not running as root
+[31-Mar-2017 19:57:57] NOTICE: fpm is running, pid 8
+[31-Mar-2017 19:57:57] NOTICE: ready to handle connections
+[31-Mar-2017 19:57:57] NOTICE: systemd monitor interval set to 10000ms
+127.0.0.1 -  31/Mar/2017:20:04:37 +0000 "GET /index.php" 200
+127.0.0.1 -  31/Mar/2017:20:06:14 +0000 "GET /index.php" 200
+127.0.0.1 -  31/Mar/2017:20:06:24 +0000 "OPTIONS /index.php" 200
+127.0.0.1 -  31/Mar/2017:20:06:24 +0000 "POST /index.php" 400
+127.0.0.1 -  31/Mar/2017:20:06:34 +0000 "OPTIONS /index.php" 200
+127.0.0.1 -  31/Mar/2017:20:06:34 +0000 "POST /index.php" 400
+127.0.0.1 -  31/Mar/2017:20:06:39 +0000 "OPTIONS /index.php" 200
+127.0.0.1 -  31/Mar/2017:20:06:39 +0000 "POST /index.php" 400
+127.0.0.1 -  31/Mar/2017:20:06:51 +0000 "OPTIONS /index.php" 200
+127.0.0.1 -  31/Mar/2017:20:06:51 +0000 "POST /index.php" 400
+127.0.0.1 -  31/Mar/2017:20:07:01 +0000 "OPTIONS /index.php" 200
+127.0.0.1 -  31/Mar/2017:20:07:01 +0000 "POST /index.php" 200
+127.0.0.1 -  31/Mar/2017:20:07:01 +0000 "OPTIONS /index.php" 200
+127.0.0.1 -  31/Mar/2017:20:07:02 +0000 "GET /index.php" 200
+127.0.0.1 -  31/Mar/2017:20:07:02 +0000 "GET /index.php" 404
+127.0.0.1 -  31/Mar/2017:20:37:10 +0000 "GET /index.php" 200
+127.0.0.1 -  31/Mar/2017:20:37:08 +0000 "GET /index.php" 200
+127.0.0.1 -  31/Mar/2017:20:39:44 +0000 "GET /index.php" 200
+127.0.0.1 -  31/Mar/2017:20:40:45 +0000 "GET /index.php" 200
+127.0.0.1 -  31/Mar/2017:20:41:25 +0000 "GET /index.php" 200
+127.0.0.1 -  31/Mar/2017:20:42:16 +0000 "GET /index.php" 200
+127.0.0.1 -  31/Mar/2017:20:46:46 +0000 "GET /index.php" 200
+127.0.0.1 -  31/Mar/2017:20:47:52 +0000 "GET /index.php" 200

@@ -7,7 +7,7 @@
     </ul>
     <ul id="dropdown-logout" class="dropdown-content">
         <li>
-            <a :href="{'auth.logout'}">Sair</a>
+            <a v-link="{'auth.logout'}">Sair</a>
         </li>
     </ul>
     <div class="navbar-fixed">
@@ -20,7 +20,7 @@
                         <!-- Dropdown Trigger -->
                         <li v-for="o in menus" >
                             <a v-if="o.dropdownId" class="dropdown-button" href="javascript:void(0);" :data-activates="o.dropdownId">{{ o.name }}<i class="material-icons right">arrow_drop_down</i></a>
-                            <a v-else :href="{name: o.url}">{{ o.name }} **{{ o.url }}</a>
+                            <a v-else v-link="{name: o.routeName}#@#@#@">#@#@{{ o.name }}</a>
                         </li>
                         <li>
                             <a class="dropdown-button" href="javascript:void(0);" data-activates="dropdown-logout">{{ name }}<i class="material-icons right">arrow_drop_down</i></a>
@@ -29,7 +29,7 @@
                 </div>
                 <ul id="nav-mobile" class="side-nav">
                     <li v-for="o in menus">
-                        <a :href="{o.url}">{{ o.name }}</a>
+                        <a :href="{name: o.routeName}*****">*!*!{{ o.name }}</a>
                     </li>
                 </ul>
             </div>
@@ -44,17 +44,18 @@
             return {
                 menus: [
                     { name: 'Conta Bancaria', routeName: 'bank-account.list' },
-                    //{name: 'Contas a Pagar', dropdownId: 'teste'},
-                    //{name: 'Contas a Receber', routeName: 'auth.login'},
+                    {name: 'Contas a Pagar', dropdownId: 'teste'},
+                    {name: 'Contas a Receber', routeName: 'auth.login'},
                 ],
                 menusDropdown: [
-                    /*{
+                    {
                         id: 'teste',
                         items: [
                             {name: 'Listar Contas', routeName: 'auth.login'},
                             {name: 'Criar Contas', routeName: 'auth.login'}
                         ]
-                    }*/
+                    }
+
                 ],
                 user: Auth.user
             }
