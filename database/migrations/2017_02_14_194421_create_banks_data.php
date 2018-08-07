@@ -31,7 +31,15 @@ class CreateBanksData extends Migration
      */
     public function down()
     {
-        //
+        $repository = app(\CodeFin\Repositories\BankRepository::class);
+        $repository->skipPresenter(true);
+        $banks = $repository->all();
+        foreach ($this->getData() as $bankArray) {
+            $bank = $repository->findByField('name', $bankArray['name'])->first();
+            $dest = \CodeFin\Models\Bank::logosDir();
+            \Storage::disk('public')->delete($dest.'/'.$bank->logo);
+            $bank->delete();
+        }
     }
 
     public function getData(){

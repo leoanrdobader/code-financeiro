@@ -23,6 +23,7 @@ Route::get('/', function () {
         return 'Usuário sem permissão de admin';
     }*/
     return view('welcome');
+    //return view(var_dump(bcrypt('cy271285')));
 });
 
 
